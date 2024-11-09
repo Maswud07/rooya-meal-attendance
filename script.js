@@ -16,7 +16,7 @@ function submitForm() {
     attendance: attendance.value
   };
 
-  // Google Apps Script Web App URL
+  // Full Google Apps Script Web App URL
   const scriptURL = 'AKfycbxm5RjPxiH7nnnkeiuSLy2nO7Q-gMcbDAAT6teQKTg7';
 
   // Send data to Google Sheets
