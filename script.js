@@ -17,7 +17,7 @@ function submitForm() {
   };
 
   // Full Google Apps Script Web App URL
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxm5RjPxiH7nnnkeiuSLy2nO7Q-gMcbDAAT6teQKTg7/dev';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzB_3FyMi1Ua6emEcTfjbr4YmKZWkI_muauApVM_48/dev';
 
   // Send data to Google Sheets
   fetch(scriptURL, {
