@@ -39,15 +39,16 @@ function submitForm() {
 
       // Clear form fields
       nameInput.value = "";
-      attendance.checked = false;
+      document.querySelectorAll('input[name="attendance"]').forEach(radio => radio.checked = false);
     } else {
       confirmationMessage.innerText = "There was an issue with submission. Please try again.";
       confirmationMessage.style.color = "red";
+      console.error("Error in response:", data.message);
     }
   })
   .catch(error => {
     confirmationMessage.innerText = "Error submitting form. Please check your network and try again.";
     confirmationMessage.style.color = "red";
-    console.error("Error!", error);
+    console.error("Network or CORS error:", error);
   });
 }
