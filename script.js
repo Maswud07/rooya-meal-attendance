@@ -30,7 +30,7 @@ function submitForm() {
     date: new Date().toLocaleDateString() // Capture the current date
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbzB_3FyMi1Ua6emEcTfjbr4YmKZWkI_muauApVM_48/dev/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxWEStq1OaqRdjCbQliM4d123OrvA9eIXhLK_mR378p7OzXrJ2seZ-J-9DCjzT1ag9s/exec", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
