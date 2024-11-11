@@ -23,6 +23,26 @@ function submitForm() {
     popup.style.display = "none";
   }, 2000);
 
+  // Save data to Google Sheets
+  const data = {
+    name: nameInput.value,
+    attendance: attendance.value,
+    date: new Date().toLocaleDateString() // Capture the current date
+  };
+
+  fetch("https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbzza-j46W_dhuCSNxq4xz96yzCPydn1PO5Audy6bFAJ2SketyZ2EgccDm20FzZonAR6/exec/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.text())
+  .then(result => {
+    console.log("Attendance saved:", result);
+  })
+  .catch(error => console.error("Error saving attendance:", error));
+
   // Clear form fields
   nameInput.value = "";
   attendance.checked = false;
