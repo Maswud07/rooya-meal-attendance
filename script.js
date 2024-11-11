@@ -11,7 +11,7 @@ function submitForm() {
     return;
   }
 
-  // Show confirmation message in the confirmationMessage div
+  // Show confirmation message
   confirmationMessage.innerText = `Thank you, ${nameInput.value}! Your attendance is recorded as: ${attendance.value}.`;
   confirmationMessage.style.color = "#4caf50";
 
@@ -30,19 +30,21 @@ function submitForm() {
     date: new Date().toLocaleDateString() // Capture the current date
   };
 
- console.log("Submitting data:", data);
- fetch("https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbzza-j46W_dhuCSNxq4xz96yzCPydn1PO5Audy6bFAJ2SketyZ2EgccDm20FzZonAR6/exec/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzB_3FyMi1Ua6emEcTfjbr4YmKZWkI_muauApVM_48/dev/exec", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+        "Content-Type": "application/json"
     },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.text())
-  .then(result => {
-    console.log("Attendance saved:", result);
-  })
-  .catch(error => console.error("Error saving attendance:", error));
+    body: JSON.stringify({
+        name: "Test User",               // Replace with actual form input if testing
+        attendance: "Present",           // Replace with actual form input if testing
+        date: new Date().toLocaleDateString()
+    })
+})
+.then(response => response.text())
+.then(result => console.log("Response from server:", result))
+.catch(error => console.error("Error:", error));
+
 
   // Clear form fields
   nameInput.value = "";
