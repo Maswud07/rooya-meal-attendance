@@ -12,7 +12,7 @@ function submitForm() {
   }
 
   // Show confirmation message
-  confirmationMessage.innerText = `Thank you, ${nameInput.value}! Your attendance is recorded as: ${attendance.value}.`;
+  confirmationMessage.innerText = Thank you, ${nameInput.value}! Your attendance is recorded as: ${attendance.value}.;
   confirmationMessage.style.color = "#4caf50";
 
   // Display popup
@@ -30,23 +30,19 @@ function submitForm() {
     date: new Date().toLocaleDateString() // Capture the current date
   };
 
+  
+
   fetch("https://script.google.com/macros/s/AKfycbxWEStq1OaqRdjCbQliM4d123OrvA9eIXhLK_mR378p7OzXrJ2seZ-J-9DCjzT1ag9s/exec", {
     method: "POST",
     headers: {
-        "Content-Type": "application/json"
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-        name: "Test User",               // Replace with actual form input if testing
-        attendance: "Present",           // Replace with actual form input if testing
-        date: new Date().toLocaleDateString()
-    })
-})
-.then(response => response.text())
-.then(result => console.log("Response from server:", result))
-.catch(error => console.error("Error:", error));
-
-
+    mode: "no-cors",  // Add this line for testing CORS issues
+    body: JSON.stringify(data)
+  })
+  .then(response => console.log("Response from server:", response))
+  .catch(error => console.error("Error:", error));
   // Clear form fields
   nameInput.value = "";
-  attendance.checked = false;
+  attendance.checked = false;
 }
