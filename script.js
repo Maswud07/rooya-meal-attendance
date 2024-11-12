@@ -12,7 +12,7 @@ function submitForm() {
   }
 
   // Show confirmation message
-  confirmationMessage.innerText = Thank you, ${nameInput.value}! Your attendance is recorded as: ${attendance.value}.;
+  confirmationMessage.innerText = `Thank you, ${nameInput.value}! Your attendance is recorded as: ${attendance.value}.`;
   confirmationMessage.style.color = "#4caf50";
 
   // Display popup
@@ -44,5 +44,5 @@ function submitForm() {
   .catch(error => console.error("Error:", error));
   // Clear form fields
   nameInput.value = "";
-  attendance.checked = false;
+  attendance.checked = false;
 }
