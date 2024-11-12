@@ -1,3 +1,4 @@
+/* Existing styles from styles.css */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -50,7 +51,7 @@ p {
   margin-bottom: 0.5rem;
 }
 
-input[type="text"] {
+input[type="text"], input[type="date"] { /* Added input[type="date"] */
   width: 100%;
   padding: 12px;
   border: 1px solid #555;
@@ -60,7 +61,7 @@ input[type="text"] {
   margin-bottom: 1.5rem;
 }
 
-input[type="text"]::placeholder {
+input[type="text"]::placeholder, input[type="date"]::placeholder { /* Added date placeholder style */
   color: #999;
 }
 
@@ -116,6 +117,13 @@ button:hover {
   z-index: 20;
 }
 
+/* Reminder Message Styling */
+.reminder { /* New style for the submission reminder */
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
 /* Animated Background Circles */
 .background-circle {
   position: absolute;
@@ -156,6 +164,72 @@ button:hover {
   }
   50% {
     transform: translateY(-20px) translateX(20px);
+  }
+}
+/* styles.css */
+
+/* Add styling for the date input and reminder message */
+.attendance-card input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.attendance-card input[type="date"]::placeholder {
+  color: #999;
+}
+
+/* Reminder Message Styling */
+.reminder { /* Style for the submission reminder */
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+/* Existing styles from styles.css */
+
+/* Message Container and Icon Styling */
+.message-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.reminder-icon {
+  font-size: 1.8rem;
+  color: #ffcc00; /* Bright yellow for the icon */
+  margin-bottom: 0.5rem;
+}
+
+.message-box {
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px; /* Restrict the message width */
+  border-top: 1px solid #555; /* Adds a subtle border on top */
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.moving-message {
+  color: #ffcc00; /* Bright yellow for the message */
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap; /* Keeps the message on a single line */
+  animation: scrollMessage 8s linear infinite;
+}
+
+/* Animation for Moving Message */
+@keyframes scrollMessage {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move off-screen to the left */
   }
 }
 
