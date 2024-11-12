@@ -21,6 +21,9 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required placeholder="Your Name">
         
+        <label>Date:</label>
+        <input type="date" id="date" name="date" required>
+
         <label>Will you be attending?</label>
         <div class="radio-group">
           <input type="radio" id="yes" name="attendance" value="Yes" required>
@@ -31,6 +34,15 @@
         </div>
 
         <button type="button" onclick="submitForm()">Submit</button>
+        
+        <!-- Centered Icon and Moving Message within the attendance card -->
+        <div class="message-container">
+          <span class="reminder-icon">🔔</span>
+          <div class="message-box">
+            <p class="moving-message">Please submit your attendance before 11 PM</p>
+          </div>
+        </div>
+        
       </form>
       
       <div id="confirmationMessage"></div>
